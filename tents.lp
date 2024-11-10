@@ -1,4 +1,24 @@
-dim(6).
-tree(0,2). tree(1,1). tree(2,0). tree(2,5). tree(4,4). tree(5,0). tree(5,4).
-rowVal(1,1), rowVal(2,2), rowVal(3,0), rowVal(4,1), rowVal(5,1), rowVal(6,2).
-colVal(1,2), colVal(2,1), colVal(3,0), colVal(4,2), colVal(5,0), colVal(6,2).
+% the program is forced to pick both elements of the choice rule
+% due to the following rules so both rows and columns are generated
+{ row(0..D'); col(0..D') } :- dim(D), D'=D-1.
+
+% for each tree location, asign to it ownership of a location neighboring it on any axis
+1 { own((X, Y), (X', Y')) : |X - X'|+|Y - Y'| = 1, row(X'), col(Y') } 1 :- tree(X, Y).
+% generate a tent atom at each location owned by a tree
+1 { tent(X', Y') } 1 :- own((X, Y), (X', Y')).
+
+% one same tent cannot belong to two different trees
+:- own((X, Y),(Z, T)), own((X', Y'),(Z, T)), (X, Y)!=(X', Y').
+
+% no two tents can be neighbours in both axis
+:- tent(X,Y), tent(X',Y'), |X - X'|+|Y - Y'| = 1.
+% or diagonally
+:- tent(X,Y), tent(X',Y'), Y!=Y', X!=X', |X-X'|=1, |Y-Y'|=1.
+
+% check number of tents in each row and column matches assigned values
+:- rowVal(R,V), #count{Y: tent(R,Y)}!=V.
+:- colVal(C,V), #count{X: tent(X,C)}!=V.
+
+#show tent/2.
+#show tree/2.
+#show own/2.
