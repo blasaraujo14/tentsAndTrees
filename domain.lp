@@ -1,4 +1,4 @@
-dim(6).
-tree(0,2). tree(1,1). tree(2,0). tree(2,5). tree(4,4). tree(5,0). tree(5,4).
-rowVal(1,1), rowVal(2,2), rowVal(3,0), rowVal(4,1), rowVal(5,1), rowVal(6,2).
-colVal(1,2), colVal(2,1), colVal(3,0), colVal(4,2), colVal(5,0), colVal(6,2).
+dim(25).
+tree(0,5). tree(0,17). tree(0,20). tree(1,0). tree(1,23). tree(2,7). tree(3,11). tree(3,17). tree(3,19). tree(3,20). tree(4,5). tree(5,6). tree(5,12). tree(5,20). tree(6,1). tree(6,11). tree(6,13). tree(8,9). tree(8,17). tree(8,20). tree(10,1). tree(10,2). tree(13,8). tree(14,10). tree(14,13). tree(15,5). tree(15,7). tree(15,12). tree(15,15). tree(16,5). tree(17,1). tree(17,3). tree(17,14). tree(18,12). tree(18,13). tree(18,17). tree(19,1). tree(19,15). tree(20,9). tree(20,12). tree(20,15). tree(22,11). tree(22,16). tree(22,21). tree(23,7). tree(23,14). tree(24,2). tree(24,6). tree(24,8). tree(24,11). 
+rowVal(0,3). rowVal(1,3). rowVal(2,0). rowVal(3,1). rowVal(4,3). rowVal(5,2). rowVal(6,1). rowVal(7,2). rowVal(8,5). rowVal(9,1). rowVal(10,4). rowVal(11,2). rowVal(12,3). rowVal(13,2). rowVal(14,3). rowVal(15,1). rowVal(16,4). rowVal(17,3). rowVal(18,0). rowVal(19,2). rowVal(20,2). rowVal(21,1). rowVal(22,1). rowVal(23,1). rowVal(24,0). 
+colVal(0,5). colVal(1,0). colVal(2,2). colVal(3,3). colVal(4,2). colVal(5,1). colVal(6,4). colVal(7,0). colVal(8,1). colVal(9,2). colVal(10,2). colVal(11,0). colVal(12,1). colVal(13,2). colVal(14,1). colVal(15,3). colVal(16,3). colVal(17,2). colVal(18,1). colVal(19,2). colVal(20,2). colVal(21,2). colVal(22,4). colVal(23,0). colVal(24,5). 

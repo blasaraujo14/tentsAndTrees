@@ -1,6 +1,7 @@
 % the program is forced to pick both elements of the choice rule
 % due to the following rules so both rows and columns are generated
-{ row(0..D'); col(0..D') } :- dim(D), D'=D-1.
+col(0..D) :- dim(D), D'=D-1.
+row(0..D) :- dim(D), D'=D-1.
 
 % for each tree location, asign to it ownership of a location neighboring it on any axis
 1 { own((X, Y), (X', Y')) : |X - X'|+|Y - Y'| = 1, row(X'), col(Y') } 1 :- tree(X, Y).
@@ -16,9 +17,6 @@
 :- tent(X,Y), tent(X',Y'), Y!=Y', X!=X', |X-X'|=1, |Y-Y'|=1.
 
 % check number of tents in each row and column matches assigned values
-:- rowVal(R,V), #count{Y: tent(R,Y)}!=V.
-:- colVal(C,V), #count{X: tent(X,C)}!=V.
+:- rowVal(R,V), #count{X: tent(X,R)}!=V.
+:- colVal(C,V), #count{Y: tent(C,Y)}!=V.
 
-#show tent/2.
-#show tree/2.
-#show own/2.
